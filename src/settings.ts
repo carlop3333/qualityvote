@@ -4,11 +4,11 @@ export const setting: SettingsFormField[] = [
 	{
 		type: "group",
 		label: "Vote Comments",
-		helpText: "This is where you can configure what the bot will say at comments",
+		helpText: "This is where you can configure what the bot will say at comments.",
 		fields: [
 			{
 				type: "paragraph",
-				label: "The vote comment that the bot will post (enter spaces allowed)",
+				label: "The vote comment that the bot will post. (enter spaces allowed)",
 				name: "vote-comment",
 				helpText: `Allowed placeholders: {{subreddit_name}} | {{author}} | {{link}}`,
 				scope: "installation",
@@ -49,7 +49,7 @@ export const setting: SettingsFormField[] = [
 				type: "paragraph",
 				label: "The unknown quality comment",
 				name: "vote-unknown",
-				helpText: "The comment that will appear when there aren't sufficient votes (after 10 checks, read app desc)",
+				helpText: "The comment that will appear when there aren't sufficient votes. (after 10 checks, read app desc)",
 				scope: "installation",
 				defaultValue: `u/{{author}}, there weren't enough votes to determine the quality of your post...`,
 				onValidate: ({ value }) => {
@@ -68,9 +68,9 @@ export const setting: SettingsFormField[] = [
 			{
 				type: "number",
 				label: "Post Check Threshold",
-				helpText: "The time in units that a post will be checked (min: 1 | max: 72)",
+				helpText: "The time in units that a post will be checked. (min: 1 | max: 72) MUST BE MORE THAN 10 MINUTES!!!",
 				name: "check-threshold",
-				defaultValue: 8,
+				defaultValue: 12,
 				onValidate: ({ value }) => {
 					if (!value) {
 						return "Threshold must not be void!";
@@ -99,7 +99,7 @@ export const setting: SettingsFormField[] = [
 			{
 				type: "number",
 				label: "Downvote threshold",
-				helpText: "The number of downvotes that are needed to flag the post (min: -1 | max: -50)",
+				helpText: "The number of downvotes that are needed to flag the post. (min: -1 | max: -50)",
 				name: "downvote-threshold",
 				scope: "installation",
 				defaultValue: -5,
@@ -114,7 +114,7 @@ export const setting: SettingsFormField[] = [
 			{
 				type: "number",
 				label: "Upvote threshold",
-				helpText: "The number of upvotes that are needed to calm the post (min: 1 | max: 50)",
+				helpText: "The number of upvotes that are needed to calm the post. (min: 1 | max: 50)",
 				name: "upvote-threshold",
 				scope: "installation",
 				defaultValue: 5,
@@ -138,14 +138,28 @@ export const setting: SettingsFormField[] = [
 				label: "Ignore flairs",
 				name: "ignore-flairs",
 				scope: "installation",
-				helpText: 'Sepparate them in commas (,). Eg. "My Flair 1, This is a flair, Moderator, Random"',
+				helpText: 'Comma-separated values. Eg. "My Flair 1 :cat_blep:,This is a flair,Moderator :upvote:,Random"',
+			},
+			{
+				type: "boolean",
+				label: "Ignore post flairs as well",
+				name: "ignore-post-flairs",
+				scope: "installation",
+				helpText: 'If enabled, this will ignore post/user flairs specified above. If disabled, this will only ignore user flairs specified above.',
 			},
 			{
 				type: "boolean",
 				label: "Ignore moderators",
 				name: "ignore-mods",
 				scope: "installation",
-				helpText: "Ignores moderators when they do posts",
+				helpText: "Ignores moderators when they do posts.",
+			},
+			{
+				type: "boolean",
+				label: "Ignore approved users",
+				name: "ignore-approved",
+				scope: "installation",
+				helpText: "Ignores approved users when they do posts.",
 			},
 			{
 				type: "boolean",

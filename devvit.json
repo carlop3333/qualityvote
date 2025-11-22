@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "qualityvote2",
+  "blocks": {
+    "entry": "src/main.tsx",
+    "triggers": [
+      "onPostCreate",
+      "onPostSubmit"
+    ],
+    "settings": {
+      "enable": true
+    }
+  },
+  "dev": {
+    "subreddit": "qualityvote2_dev"
+  }
+}

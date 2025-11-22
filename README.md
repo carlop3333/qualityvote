@@ -48,3 +48,15 @@ This comment is customizable; and also can be disabled: at the cost of a counter
 ---
 (Votes ending in X time of unit)
 ```
+
+Changelog
+
+- 0.2.1
+    - Updated (part of) the codebase to Devvit 0.12.3
+    - Ignore flairs now checks post flairs as well.
+    - Fixed Ignore Moderators not ignoring moderators.
+    - Fixed some typos (oops)...
+- 0.1.3
+    - Changed check system so it's easier for the end user.
+    - Fixed report mode
+0.1.2 - 0.1.0 -> Initial release alongside some bugfixes
