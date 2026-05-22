@@ -67,10 +67,15 @@ export function replaceCommentPlaceholders(
 		type: "PostSubmit";
 	} & PostSubmit
 ) {
+	
 	const toReplace = {
 		subreddit_name: eventContext.subreddit?.name,
-		author: eventContext.author?.name,
-		link: eventContext.post?.url,
+		subreddit_id: eventContext.subreddit?.id.substring(3),
+		author: eventContext.author?.name, //author name
+		id: eventContext.post?.id.substring(3), //post base6 id
+		title: eventContext.post?.title, //post title
+		link: eventContext.post?.permalink, // post link
+		mediaLink: eventContext.post?.url, //post media link
 	};
 	let par: string = paragraph;
 	for (const [key, val] of Object.entries(toReplace)) {

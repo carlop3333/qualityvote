@@ -51,6 +51,10 @@ This comment is customizable; and also can be disabled: at the cost of a counter
 
 Changelog
 
+- 0.3.0
+    - Added new placeholders: "subreddit_id", "id", "title".
+    - "link" placeholder now redirects to a direct post link instead of a media link.
+    - old "link" behavior has been renamed as "mediaLink"
 - 0.2.1
     - Updated (part of) the codebase to Devvit 0.12.3
     - Ignore flairs now checks post flairs as well.

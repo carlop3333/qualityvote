@@ -10,7 +10,7 @@ export const setting: SettingsFormField[] = [
 				type: "paragraph",
 				label: "The vote comment that the bot will post. (enter spaces allowed)",
 				name: "vote-comment",
-				helpText: `Allowed placeholders: {{subreddit_name}} | {{author}} | {{link}}`,
+				helpText: `Allowed placeholders: {{subreddit_name}} | {{subreddit_id}} | {{id}} | {{author}} | {{title}} | {{link}} | {{mediaLink}}`,
 				scope: "installation",
 				defaultValue: `Hello u/{{author}}! Welcome to r/{{subreddit_name}}!\n\n---\n\nFor other users, does this post fit the subreddit?\n\nIf so, **upvote this comment!**\n\nOtherwise, **downvote this comment!**\n\nAnd if it does break the rules, **downvote this comment and report this post!**`,
 				onValidate: ({ value }) => {
